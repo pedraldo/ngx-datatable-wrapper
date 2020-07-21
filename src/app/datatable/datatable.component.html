@@ -1,0 +1,21 @@
+<input 
+    *ngIf="!!filterOptions"
+    type="text"
+    style="padding:8px;margin:15px auto;width:30%;"
+    placeholder="Rechercher"
+    (keyup)="onFilterInputKeyup($event)"
+>
+<ngx-datatable
+    #table
+    class="material"
+    [rows]="filteredData"
+    [columns]="columns"
+    [columnMode]="tableOptions.columnMode"
+    [headerHeight]="tableOptions.headerHeight"
+    [footerHeight]="tableOptions.footerHeight"
+    [rowHeight]="tableOptions.rowHeight"
+    [limit]="paginationOptions.limit"
+
+    [selectionType]="'checkbox'"
+>
+</ngx-datatable>
